@@ -13,7 +13,8 @@ function App() {
     <GridBackground />
     <Header />
     <Hero  />
-    <Chat className='' />
+    <Chat  />
+
 
       
       <div className="relative z-10 flex flex-col justify-center items-center min-h-screen text-center px-4">

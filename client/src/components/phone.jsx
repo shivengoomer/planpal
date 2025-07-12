@@ -1,6 +1,6 @@
 import React from "react";
 
-const Card = () => {
+const Phone = () => {
   return (
     <div className="w-[270px] h-[500px] bg-black rounded-[35px] border border-neutral-800 p-[7px] relative shadow-lg shadow-green-200 group">
       
@@ -11,15 +11,35 @@ const Card = () => {
       <div className="absolute left-[-4px] top-[26%] h-[30px] w-[2px] bg-gradient-to-r from-[#c75b5b] via-[#333] to-[#595959] scale-x-[-1]" />
       <div className="absolute left-[-4px] top-[36%] h-[30px] w-[2px] bg-gradient-to-r from-[#de6363] via-[#333] to-[#595959] scale-x-[-1]" />
 
-      {/* Card Inner */}
-      <div className="card-int relative h-full rounded-[25px] transition-all duration-500 ease-out overflow-hidden group-hover:bg-pos-100 bg-pos-0">
-        <div className="hello flex flex-col items-center justify-center h-full bg-cyan-100/90 text-black text-2xl font-bold leading-[35px] text-center transform transition-transform duration-500 group-hover:-translate-y-5">
-          Hello
-          <span className="hidden-text block opacity-0 transition-opacity duration-300 group-hover:opacity-100">
-            uiverse
-          </span>
+      {/* Card Inner- Chat option */}
+      <div className="bg-white rounded-3xl min-h-34/35 p-4 mt-2 flex flex-col w-[255px]  shadow-md">
+      <div className="flex items-center pb-2 border-b border-gray-300">
+        <div className="w-[50px] h-[50px] rounded-full bg-green-300 mr-5" />
+        <div className="text-black text-lg font-semibold">Manali Trip</div>
+      </div>
+
+      <div className="flex-1 overflow-y-auto max-h-64">
+        <div className="p-4 space-y-2">
+          <div className="bg-gray-100 text-black text-sm p-2 rounded-lg w-fit max-w-full">Guyz,Ladakh Next?</div>
+          <div className="bg-gray-800 text-white text-sm p-2 rounded-lg w-fit self-end ml-auto max-w-full">Boom Boom</div>
         </div>
       </div>
+
+      <div className="pt-2 border-t border-gray-300">
+        <form className="flex flex-col gap-2">
+          <textarea
+            placeholder="Type your message here"
+            className="w-full p-2 rounded-lg border border-gray-300 resize-none focus:outline-none focus:ring-2 focus:ring-blue-500"
+          />
+          <button
+            type="submit"
+            className="bg-gray-800 text-white py-2 px-4 rounded-lg text-sm hover:bg-gray-100 hover:text-gray-800 transition-colors"
+          >
+            Send
+          </button>
+        </form>
+      </div>
+    </div>
 
       {/* Top Section */}
       <div className="absolute top-0 right-1/2 translate-x-1/2 w-[35%] h-[18px] bg-green rounded-b-[10px]" />
@@ -33,4 +53,4 @@ const Card = () => {
   );
 };
 
-export default Card;
+export default Phone;

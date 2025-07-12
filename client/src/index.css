@@ -1,1 +1,8 @@
 @import "tailwindcss";
+
+/* Global styles using base layer */
+@layer base {
+  body {
+    color: white;
+  }
+}
