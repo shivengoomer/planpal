@@ -4,7 +4,7 @@ import { cn } from "../lib/utils";
 
 export function GridBackground() {
   return (
-    <div className="fixed inset-0 -z-50 opacity-95">
+    <div className="fixed inset-0 -z-50 opacity-98">
       {/* Grid pattern over black */}
       <div
         className={cn(
@@ -17,7 +17,7 @@ export function GridBackground() {
 
       {/* Radial fade (transparent center, black edges) */}
       <div
-        className="absolute inset-0 bg-black pointer-events-none [mask-image:radial-gradient(ellipse_at_center,transparent_10%,black)]"
+        className="absolute inset-0 bg-black pointer-events-none [mask-image:radial-gradient(ellipse_at_center,transparent_3%,black)]"
       />
     </div>
   );

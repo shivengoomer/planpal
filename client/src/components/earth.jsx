@@ -28,8 +28,8 @@ const StyledWrapper = styled.div`
   .earth-loader {
     --watercolor: #3344c1;
     --landcolor: #7cc133;
-    width: 7.5em;
-    height: 7.5em;
+    width: 15em;
+    height: 15em;
     background-color: var(--watercolor);
     position: relative;
     overflow: hidden;

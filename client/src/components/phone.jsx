@@ -2,7 +2,7 @@ import React from "react";
 
 const Phone = () => {
   return (
-    <div className="w-[270px] h-[500px] bg-black rounded-[35px] border border-neutral-800 p-[7px] relative shadow-lg shadow-green-200 group">
+    <div className="w-[250px] h-[500px] bg-black rounded-[35px] border border-neutral-800 p-[7px] relative shadow-lg shadow-green-200 group">
       
       {/* Right side button */}
       <div className="absolute top-[30%] right-[-4px] h-[45px] w-[2px] bg-gradient-to-r from-[#e15454] via-[#333] to-[#595959]" />
@@ -12,7 +12,7 @@ const Phone = () => {
       <div className="absolute left-[-4px] top-[36%] h-[30px] w-[2px] bg-gradient-to-r from-[#de6363] via-[#333] to-[#595959] scale-x-[-1]" />
 
       {/* Card Inner- Chat option */}
-      <div className="bg-white rounded-3xl min-h-34/35 p-4 mt-2 flex flex-col w-[255px]  shadow-md">
+      <div className="bg-white rounded-3xl min-h-34/35 p-4 mt-2 flex flex-col max-w-[255px]  shadow-md">
       <div className="flex items-center pb-2 border-b border-gray-300">
         <div className="w-[50px] h-[50px] rounded-full bg-green-300 mr-5" />
         <div className="text-black text-lg font-semibold">Manali Trip</div>
