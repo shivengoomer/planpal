@@ -56,7 +56,6 @@ const Hero = () => {
        <div>
         <Link to="/chat">
       <button
-      href="/chat"
         className="w-fit h-20 text-3xl px-4 flex items-center justify-start gap-2 bg-lime-300 rounded-full text-neutral-900 font-semibold border-none relative cursor-pointer shadow-md transition-all duration-500 hover:bg-lime-200 active:scale-95 group"
       >
         <svg
