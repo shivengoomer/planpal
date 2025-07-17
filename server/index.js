@@ -1,15 +1,15 @@
 const express = require('express')
 const cors = require('cors');
 const { mongoose } = require('mongoose')
-const userRoutes = require('./routes/userRoutes')
+const userRoutes = require('./routes/userRoutes');
+const cookieParser = require('cookie-parser');
 const app = express()
 require('dotenv').config()
 app.use(cors({
-  origin: '*', // Allow all origins
-  methods: ['GET', 'POST', 'PUT', 'DELETE'], // Allow these methods
-  allowedHeaders: ['Content-Type', 'Authorization'] // Allow these headers
+ origin: "http://localhost:5173",
+  credentials: true,// Allow these headers
 }));
-
+app.use(cookieParser());
 app.use(express.json());
 
 const port = process.env.PORT || 5000

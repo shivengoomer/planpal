@@ -1,8 +1,6 @@
 const User = require("../models/Users.js");
 const { OAuth2Client } = require("google-auth-library");
-const createToken = require("./browserJwt.js");
-const bcrypt = require('bcrypt')
-
+const createToken = require("./browserJwt.js"); 
 const client = new OAuth2Client(process.env.GOOGLE_CLIENT_ID);
 
 const signup = async (req, res) => {
@@ -19,8 +17,10 @@ const signup = async (req, res) => {
 
     const newUser = new User({ name, email, password }); 
     await newUser.save();
+    createToken(newUser._id, res);
+
     if(newUser){
-     res.createToken(newUser._id,res).status(200).json({ message: "New user created" });
+     createToken(newUser._id,res).status(200).json({ message: "New user created" });
     }
   } catch (error) {
     console.error(error);
@@ -35,11 +35,19 @@ const login= async (req,res)=>{
       return res.status(404).json({ message: "User does not exist" });
     }
     const isMatch = await user.matchPassword(password);
+   
     if (!isMatch) {
       return res.status(401).json({ message: "Invalid password" });
     }
-    createToken(user._id, res);
-    res.status(200).json({ message: "User Logged in Successfully!" });
+    createToken(user._id,res);
+    res.status(201).json({
+      user: {
+        _id: user._id,
+        name: user.name,
+        email: user.email,
+      }
+    });
+    
   } catch (error) {
     console.error(error);
     res.status(500).json({ message: "Server error" });
