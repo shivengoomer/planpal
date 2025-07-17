@@ -1,9 +1,11 @@
-import React from 'react';
+import React from 'react';import ChatCard from '../components/chatCard';
+import GetUser from '../section/getUsers';
+;
 
 const Chat = () => {
   return (
-    <div className="flex items-center justify-center h-screen text-white text-3xl">
-      Welcome to the Chat Page!
+    <div className='pt-10'>
+      <ChatCard />
     </div>
   );
 };

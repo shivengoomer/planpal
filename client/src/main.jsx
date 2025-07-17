@@ -8,7 +8,8 @@ import { GridBackground } from './components/background.jsx'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <GridBackground />
-    <App />
+      <GridBackground />
+      <App />
+
   </StrictMode>,
 )

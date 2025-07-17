@@ -1,19 +1,27 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Home from './pages/home';      // or wherever your Home component is
-import Chat from './pages/chat';      // your new chat page
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
+import Home from './pages/home';
+import Chat from './pages/chat';
 import Login from './pages/login';
+import { AuthProvider, useAuth } from './context/AuthProvider';
 
-function App() {
+function AppRoutes() {
+  const { authUser } = useAuth(); 
+
   return (
-    <Router>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/chat" element={<Chat />} />
-        <Route path="/login" element={<Login />} />
-
-      </Routes>
-    </Router>
+    <Routes>
+      <Route path="/" element= {<Home />} />
+      <Route path="/login" element={<Login />} />
+      <Route path="/chat" element={authUser ? <Chat /> : <Navigate to="/login" />} />
+    </Routes>
   );
 }
 
-export default App;
+export default function App() {
+  return (
+    <AuthProvider>
+      <Router>
+        <AppRoutes />
+      </Router>
+    </AuthProvider>
+  );
+}
